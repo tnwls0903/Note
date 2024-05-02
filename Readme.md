@@ -27,3 +27,5 @@ git pull origin main -> STS(편집기)로 이동하여 편집 계속
 
 - 저장소 삭제: git remote remove origin || STS에서 폴더 전체 삭제 -> clone 명령어 실행 -> import 폴더 -> 2번 사용자 등록
 - clone: 
+git clone https://github.com/daumnulunggi/test2.git test2-clone
+git clone ttps://github.com/tnwls0903/Note.git Note
