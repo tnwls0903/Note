@@ -2,7 +2,7 @@
 => 충돌에러 발생한 사람은 git push add origin 명령어 실행하여 먼저 commit한 사람의 소스코드로 바꾸고 나서, 작업해야 됨
 => 같은 파일을 동시에 개발하면 계속 충돌 현상이 발생되므로, 각자 다른 파일 개발 담당 권장
 
-
+https://github.com/silversmell/gittest1.git
 ① 폴더 생성 후 초기화
 git init
 
