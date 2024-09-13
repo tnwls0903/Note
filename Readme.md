@@ -33,6 +33,7 @@ git clone ttps://github.com/tnwls0903/Note.git Note
 
 
 ** 코틀린 **
+(09.13) 노트
 ----------------------------------------
 상수는 재대입 불가.
 
@@ -52,4 +53,192 @@ double = 64 bit -> 실수형은 기본적으로 double형 씀
 - 2 진수
 ! 8 진수는 취급 안함.
 
+=> Boolean
+파이썬에서는 True, False 대문자이지만, 코틀린에서는 true, false 소문자
 
+** 코틀린은 기본형(int, long, float, double 등)이 아닌 참조형(Int, Long, Float, Double 등)만 사용함.
+
+자료형 지정하지 않고 null 선언하면 ? 없어도 오료 안남.
+자료형 선언한 변수 println 사용할 땐 앞에 $ 선언해야 함.
+
+** 코틀린 암묵적 형변환 지원안함.
+
+** 자료형이 정해지지 않은 Any형 변수(Int, String)인 경우, 할당 형변환 가능.
+
+** 불변 변수 선언할 땐 val, 가변 변수 사용할 땐 var
+----------------------------------------
+
+(09.13) 코드
+----------------------------------------
+fun main() {
+    // 잘못된 예
+    // -----------------------------------
+//     val username="Kildong"
+//     username="Hello"
+//     val init:Int = 1234
+//     init=0
+    
+//     println(username)
+//     println(init)
+    // -----------------------------------
+    
+    
+    // 올바른 예
+    // -----------------------------------
+//     var username="Kildong"
+//     username="Hello"
+//     var init:Int = 1234
+//     init=0
+    
+//     println(username)
+//     println(init)
+    // -----------------------------------
+    
+    
+    // -----------------------------------
+//     var s:Int=1000 // s = string
+//     println("s=:$s")
+//     println("$s")
+//     println(s)
+//     println("hello, world!!")
+    // -----------------------------------
+    
+    
+    // -----------------------------------
+//     var name="Hello"
+//     println(name.toUpperCase())
+//     println(name.toLowerCase())
+//     println(name[1])
+//     println("Hi my name is $name 입니다")
+// //     println("Hi my name is $name입니다") // error, $ 변수 다음에 공백 필요
+//     println("Hi my name is ${name}입니다") // $ 변수 붙여서 쓰고 싶을 때 {} 추가하면 됨
+//     println("Hi my name is ${name + 543} 입니다")
+//     println("Hi my name is " + name + "입니다")
+    // -----------------------------------
+    
+    // -----------------------------------
+//     var a:Int=null // error, 정수형은 null값 불가
+//     var a:Int ?= null // ? 추가하면 null값 허용되는 정수형 가능
+//     println(a)
+    
+// 	var a:Int=null
+//     var a=null
+//     println(a)
+    // -----------------------------------
+    
+    
+    // -----------------------------------
+//     val ch='A'
+//     val ch2:String="K"
+    
+//     val ch="A"
+//     val ch2:String="K"
+    
+//     val ch='A'
+//     val ch2:Char='K'
+    
+//     println("ch: $ch")
+//     println("ch2: $ch2")
+    // -----------------------------------
+    
+    // p37.
+    // -----------------------------------
+//     val name = "HonhKilDong"
+//     var age = 20
+//     var tel = "010-7890-4569"
+    
+//     println("이름 =: $name")
+//     println("나이 =: $age")
+//     println("전화번호 =: $tel")
+    // -----------------------------------
+    
+    
+    // p39.
+    // -----------------------------------
+//     val name = null
+// //     var name02:String = null // error, 자료형 선언한 경우에는 null 값 반영하려면 ? 추가해야 함
+// //     var name02:String = "null"
+//     var name02:String ?= null
+
+//     println(name)
+//     println(name02)
+    // -----------------------------------
+    
+    
+    // p41.
+    // -----------------------------------
+//     var a=123 // 기본 정수형인 int형으로 자동 할당
+//     var b=200L // long형
+// //     b=a // error, 할당으로 형 변환 불가
+//     b=a.toLong()
+    
+//     println(a)
+//     println(b)
+    // -----------------------------------
+    
+    // p42.
+    // -----------------------------------
+//     var a=123
+//     var b=200L
+//     var name=""
+    
+//     name=a.toString() 
+    
+//     println(name)
+//     if(name is Int) {
+//         print("True")
+//     } else {
+//         print("False")
+//     }
+//     // -> name이 String형으로 형변환되어 False 값 나옴
+    
+//     println()
+    
+//     if(name is String) {
+//         print("True")
+//     } else {
+//         print("False")
+//     }
+    // -> name이 String형으로 형변환되어 True 값 나옴
+    // -----------------------------------
+    
+    // p43. 참조 주소가 달라지는 경우의 예시 문제 삭제!
+    // -----------------------------------
+//     val a:Int=123 // 123
+//     val b:Int=123 // 123
+    
+//     println(a==b) // true
+//     println(a===b) // true
+    // -----------------------------------
+    
+    // p48. Any형(Int, String) 변수 형변환
+    // -----------------------------------
+//  	var a:Any=1 // Any에서 1은 Int형으로 자동 할당됨
+//     a=20L // Int -> Long
+    
+//     println("a: $a type: ${a.javaClass}") // a의 자바 기본형은 long
+    
+//     var b:Any=1 // Any에서 1은 Int형으로 자동 할당됨
+//     b="1" // Int -> String
+    
+//     println("b: $b type: ${b.javaClass}") // a의 자바 기본형은 long
+    // -----------------------------------
+    
+    
+    // p50.
+    // -----------------------------------
+//     checkArg("Hello")
+//     checkArg(5)
+    // -----------------------------------
+}
+
+// fun checkArg(x: Any) {
+//     if(x is String) {
+//         println("x is String: $x") // Hello
+//     }
+    
+//     if(x is Int) {
+//         println("x is Int: $x") // 5
+//     }
+// }
+----------------------------------------
