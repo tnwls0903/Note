@@ -29,3 +29,27 @@ git pull origin main -> STS(편집기)로 이동하여 편집 계속
 - clone: 
 git clone https://github.com/daumnulunggi/test2.git test2-clone
 git clone ttps://github.com/tnwls0903/Note.git Note
+
+
+
+** 코틀린 **
+----------------------------------------
+상수는 재대입 불가.
+
+=> 숫자 - 정수형
+1 bite = 8 bit 
+1 short = 16 bit
+1 int = 32 bit
+1 long = 64 bit
+
+=> 숫자 - 실수형
+flot =  32 bit
+double = 64 bit -> 실수형은 기본적으로 double형 씀
+
+=> 정수형 리턴 종류
+- 10 진수
+- 16 진수
+- 2 진수
+! 8 진수는 취급 안함.
+
+
